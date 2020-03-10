@@ -90,6 +90,11 @@ module.exports = {
       filename: 'index.html',
       template: './ui-src/assets/index.html',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Moonfire NVR - Live View',
+      filename: 'live.html',
+      template: './ui-src/assets/live.html',
+    }),
     new webpack.NormalModuleReplacementPlugin(
       /node_modules\/moment\/moment\.js$/,
       './min/moment.min.js'
