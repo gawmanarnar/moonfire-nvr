@@ -37,6 +37,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     nvr: './ui-src/index.js',
+    live: './ui-src/live.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -89,11 +90,13 @@ module.exports = {
       title: 'Moonfire NVR',
       filename: 'index.html',
       template: './ui-src/assets/index.html',
+      chunks: ['nvr']
     }),
     new HtmlWebpackPlugin({
       title: 'Moonfire NVR - Live View',
       filename: 'live.html',
       template: './ui-src/assets/live.html',
+      chunks: ['live']
     }),
     new webpack.NormalModuleReplacementPlugin(
       /node_modules\/moment\/moment\.js$/,
